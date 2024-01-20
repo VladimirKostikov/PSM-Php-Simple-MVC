@@ -11,7 +11,7 @@ class Controller {
 
     protected function view(string $template, $data = array()) {
         $view = new View(PATH_HEADER, PATH_FOOTER);
-        include(ROOT."/views/".$template.FILE_TEMPLATE_TYPE);
+        return include(ROOT."/views/".$template.FILE_TEMPLATE_TYPE);
     }
 
     protected function redirect($uri) {

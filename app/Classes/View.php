@@ -11,15 +11,11 @@ class View {
     }
 
     public function get_header() {
-        include(ROOT.$this->path_header);
+        return include(ROOT.$this->path_header);
     }
 
     public function get_footer() {
-        include(ROOT.$this->path_footer);
+        return include(ROOT.$this->path_footer);
     }
 
-    public function asset(string $path) {
-        echo ROOT."/public/".$path;
-        return 1;
-    }
 }

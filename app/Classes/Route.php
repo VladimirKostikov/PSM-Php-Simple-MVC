@@ -39,10 +39,10 @@ class Route {
             $class = "App\Controllers\\".$route[2];
             $controller = new $class();
 
-            call_user_func(array($controller, $route[3]), $this->data);
+            return call_user_func(array($controller, $route[3]), $this->data);
         }
         else {
-            include(ROOT."/views/errors/404".FILE_TEMPLATE_TYPE);
+            return include(ROOT."/views/errors/404".FILE_TEMPLATE_TYPE);
         }
     }
     
