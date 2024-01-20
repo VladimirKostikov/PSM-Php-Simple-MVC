@@ -13,4 +13,9 @@ class Controller {
         $view = new View(PATH_HEADER, PATH_FOOTER);
         include(ROOT."/views/".$template.FILE_TEMPLATE_TYPE);
     }
+
+    protected function redirect($uri) {
+        header('Location: '.$uri);
+        die();
+    }
 }
