@@ -1,0 +1,12 @@
+{
+    "name": "mvc/panel",
+    "description": "Simple MVC panel made by Vladimir Kostikov",
+    "type": "project",
+    "license": "no",
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    }
+}
