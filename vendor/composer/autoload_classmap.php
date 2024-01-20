@@ -9,6 +9,7 @@ return array(
     'App\\Classes\\Controller' => $baseDir . '/app/Classes/Controller.php',
     'App\\Classes\\DB' => $baseDir . '/app/Classes/DB.php',
     'App\\Classes\\Route' => $baseDir . '/app/Classes/Route.php',
+    'App\\Classes\\Session' => $baseDir . '/app/Classes/Session.php',
     'App\\Classes\\View' => $baseDir . '/app/Classes/View.php',
     'App\\Controllers\\PageController' => $baseDir . '/app/Controllers/PageController.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',

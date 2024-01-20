@@ -24,6 +24,7 @@ class ComposerStaticInitf93c3a35b893fa0a889dc78547f82d20
         'App\\Classes\\Controller' => __DIR__ . '/../..' . '/app/Classes/Controller.php',
         'App\\Classes\\DB' => __DIR__ . '/../..' . '/app/Classes/DB.php',
         'App\\Classes\\Route' => __DIR__ . '/../..' . '/app/Classes/Route.php',
+        'App\\Classes\\Session' => __DIR__ . '/../..' . '/app/Classes/Session.php',
         'App\\Classes\\View' => __DIR__ . '/../..' . '/app/Classes/View.php',
         'App\\Controllers\\PageController' => __DIR__ . '/../..' . '/app/Controllers/PageController.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
