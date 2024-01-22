@@ -5,12 +5,14 @@ namespace App\Classes;
 require_once ROOT.'/config/config.php';
 use App\Classes\View;
 use App\Classes\Session;
+use App\Classes\Route;
 
 
-
-class Controller {
+$code = 1;
+abstract class Controller {
 
     protected function view(string $template, $data = array()) {
+        $route = new Route();
         $view = new View(PATH_HEADER, PATH_FOOTER);
         return include(ROOT."/views/".$template.FILE_TEMPLATE_TYPE);
     }

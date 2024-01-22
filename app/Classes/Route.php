@@ -5,8 +5,11 @@ namespace App\Classes;
 class Route {
     private $uri;
 
-    public function __construct($uri) {
+    public function __construct($uri = '/') {
         $this->uri = $uri;
+        if(isset($_GET)) {
+            $this->uri = strtok($this->uri, '?');
+        }
     }
 
     public function getUri() {
@@ -17,8 +20,17 @@ class Route {
         return $this->data;
     }
 
-    protected function findRoute($method, $uri) {
-        $routes = include_once(ROOT.'/routes/routes.php');
+    public function getRoute(string $name): string {
+        $routes = include(ROOT.'/routes/routes.php');
+        foreach($routes as $route) {
+            if($route[4] == $name) {
+                return $route[1];
+            }
+        }
+    }
+
+    protected function findRoute($method, $uri): array {
+        $routes = include(ROOT.'/routes/routes.php');
         foreach($routes as $route) {
             if($route[0] == $method && $route[1] == $uri) {
                 return $route;

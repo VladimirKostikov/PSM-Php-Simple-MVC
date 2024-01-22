@@ -51,7 +51,7 @@ class DB {
 
     // Models
 
-    private function isModel() {
+    private function isModel(): void {
         if($this->table == null) {
             echo 'Only Model Allow';
             die();

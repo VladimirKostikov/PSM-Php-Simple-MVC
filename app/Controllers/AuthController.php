@@ -18,6 +18,10 @@ class AuthController extends Controller {
     }
 
     public function post_login($data = array()) {
-        return $this->redirect('/login?error="Incorrect data"');
+        return $this->redirect('/login?error=Incorrect data');
+    }
+
+    public function post_reg($data = array()) {
+        return $this->redirect('/login?error=Incorrect data');
     }
 }
