@@ -7,8 +7,6 @@ use App\Classes\View;
 use App\Classes\Session;
 use App\Classes\Route;
 
-
-$code = 1;
 abstract class Controller {
 
     protected function view(string $template, $data = array()) {
