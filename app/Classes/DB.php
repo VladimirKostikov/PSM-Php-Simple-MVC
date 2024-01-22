@@ -16,9 +16,9 @@ class DB {
 
     private $table = null;
     private $query = null;
-    
+    private $fields = array();
 
-    public function __construct($table = null) {
+    public function __construct($table = null, $fields = null) {
         $this->hostname = DB_HOST;
         $this->login = DB_USER;
         $this->psw = DB_PASSWORD;
@@ -48,6 +48,10 @@ class DB {
         return $this->result->fetch();
     }
 
+    public function close() {
+        $this->db = null;
+    }
+
 
     // Models
 
@@ -58,29 +62,83 @@ class DB {
         }
     }
 
-    public function find(int $id) {
+    protected function find(int $id) {
         $this->isModel();
 
         $this->result = $this->db->query("SELECT * FROM {$this->table} WHERE id={$id}")->fetch();
         return $this->result;
     }
 
-    public function delete(int $id) {
+    protected function delete(int $id) {
         $this->isModel();
 
         $this->db->query("DELETE FROM {$this->table} WHERE id={$id}");
         return $this;
     }
 
-    public function close() {
-        $this->db = null;
+    protected function select($fields, $condition = array()) {
+        $this->isModel();
+
+        if(!empty($fields)) {
+            $sql = "SELECT (";
+
+            foreach($fields as $field) {
+                if($field != end($fields))
+                    $sql .= "{$field},";
+                else
+                    $sql .= "{$field}";
+            }
+
+            $sql .= ") FROM {$this->table}";
+        }
+
+        else {
+            echo 'Fields required';
+            exit();
+        }
+
+        if(!empty($condition)) {
+            foreach($condition as $con) {
+                $sql .= "$con";
+            }
+        }
+
+        return $this->query($sql)->fetch();
+        
     }
 
+    protected function create(array $values) {
+        $this->isModel();
 
+        if(!empty($this->fields)) {
+            $sql = "INSERT INTO {$this->table} (";
 
-    /*
-    public function getTable() {
-        return $this->table;
+            foreach($this->fields as $field) {
+                if($field != end($this->fields))
+                    $sql .= "{$field},";
+                else
+                    $sql .= "{$field}";
+            }
+
+            $sql .= ") VALUES (";
+            
+            foreach($values as $val) {
+                if($val != end($this->values))
+                    $sql .= "{$val},";
+                else
+                    $sql .= "{$val}";
+            }
+
+            $sql .= ");";
+
+            return $this->query($sql);
+        }
+
+        else {
+            echo 'Fields dont exist in model';
+            die();
+        }
+
     }
-    */
+
 }

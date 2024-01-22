@@ -9,7 +9,7 @@
             <div class="mt-5">
                <div id="registration">
                   <h1 class="text-xl text-center text-semibold">Authorization</h1>
-                  <p class="text-center">If you don't have an account, <a href="<?php echo $route->getRoute('reg'); ?>" class="text-indigo-400">return to the registration page</a></p>
+                  <p class="text-center">If you don't have an account, <a href="<?php echo $GLOBALS["route"]->getRoute('reg'); ?>" class="text-indigo-400">return to the registration page</a></p>
                </div>
                <div class="mt-1">
                   <form action="/post/login" class="pt-6 pb-3 mb-4" method="POST">
@@ -28,7 +28,7 @@
                </div>
 
                <div class="mt-1">
-                  <a href="<?php echo $route->getRoute('reg'); ?>" class="block w-full p-3 bg-indigo-400 rounded text-white text-center">Return to the registration page</a>
+                  <a href="<?php echo $GLOBALS["route"]->getRoute('reg'); ?>" class="block w-full p-3 bg-indigo-400 rounded text-white text-center">Return to the registration page</a>
                </div>
 
                <?php if(!empty($data) && $data['error']) { ?>

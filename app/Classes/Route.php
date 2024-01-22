@@ -29,7 +29,7 @@ class Route {
         }
     }
 
-    protected function findRoute($method, $uri): array {
+    protected function findRoute($method, $uri){
         $routes = include(ROOT.'/routes/routes.php');
         foreach($routes as $route) {
             if($route[0] == $method && $route[1] == $uri) {
@@ -37,6 +37,7 @@ class Route {
                 exit(1);
             }
         }
+        
     }
 
     public function get() {

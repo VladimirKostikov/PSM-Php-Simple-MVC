@@ -13,5 +13,6 @@ class Session {
 
     public static function delete(string $name) {
         unset($_SESSION[$name]); 
+        return 1;
     }
 }
