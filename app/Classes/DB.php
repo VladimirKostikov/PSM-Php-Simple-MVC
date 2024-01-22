@@ -5,6 +5,7 @@ namespace App\Classes;
 require_once $_SERVER['DOCUMENT_ROOT'] . '/config/config.php';
 
 use \PDO;
+
 class DB {
     private $hostname;
     private $login;
@@ -74,6 +75,36 @@ class DB {
 
         $this->db->query("DELETE FROM {$this->table} WHERE id={$id}");
         return $this;
+    }
+
+    protected function update($fields, $condition = array()) {
+        $this->isModel();
+
+        if(!empty($fields)) {
+            $sql = "UPDATE {$this->table} SET (";
+
+            foreach($fields as $field) {
+                if($field != end($fields))
+                    $sql .= "{$field},";
+                else
+                    $sql .= "{$field}";
+            }
+
+            $sql .= ")";
+        }
+
+        else {
+            echo 'Fields required';
+            exit();
+        }
+
+        if(!empty($condition)) {
+            foreach($condition as $con) {
+                $sql .= "$con";
+            }
+        }
+
+        return $this->query($sql)->fetch();
     }
 
     protected function select($fields, $condition = array()) {
