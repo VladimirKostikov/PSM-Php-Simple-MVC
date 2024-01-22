@@ -19,10 +19,10 @@
                      </div>
                      <div class="mb-4">
                         <label class="block text-gray-700 text-sm font-bold mb-2" for="login">Your password <b class="text-rose-700">*</b></label>
-                        <input type="text" name="login" id="login" placeholder="Enter password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                        <input type="text" name="password" id="login" placeholder="Enter password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
                      </div>
                      <div>
-                        <input type="submit" name="login" id="login" value="Log In" class="w-full p-3 bg-indigo-400 rounded text-white" style="cursor: pointer">
+                        <input type="submit" id="login" value="Log In" class="w-full p-3 bg-indigo-400 rounded text-white" style="cursor: pointer">
                      </div>
                   </form>
                </div>

@@ -12,21 +12,21 @@
                   <p class="text-center">You are not authorized, create an account or register</p>
                </div>
                <div class="mt-1">
-                  <form action="<?php echo $GLOBALS["route"]->getRoute('post_reg'); ?>" class="pt-6 pb-3 mb-4">
+                  <form action="<?php echo $GLOBALS["route"]->getRoute('post_reg'); ?>" class="pt-6 pb-3 mb-4" method="POST">
                      <div class="mb-4">
                         <label class="block text-gray-700 text-sm font-bold mb-2" for="login">Your login <b class="text-rose-700">*</b></label>
                         <input type="text" name="login" id="login" placeholder="Enter login" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
                      </div>
                      <div class="mb-4">
                         <label class="block text-gray-700 text-sm font-bold mb-2" for="email">Your email <b class="text-rose-700">*</b></label>
-                        <input type="text" name="login" id="email" placeholder="Enter email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                        <input type="text" name="email" id="email" placeholder="Enter email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
                      </div>
                      <div class="mb-4">
                         <label class="block text-gray-700 text-sm font-bold mb-2" for="login">Your password <b class="text-rose-700">*</b></label>
-                        <input type="text" name="login" id="login" placeholder="Enter password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                        <input type="text" name="password" id="login" placeholder="Enter password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
                      </div>
                      <div>
-                        <input type="submit" name="login" id="login" value="Register" class="w-full p-3 bg-indigo-400 rounded text-white" style="cursor: pointer">
+                        <input type="submit"  id="login" value="Register" class="w-full p-3 bg-indigo-400 rounded text-white" style="cursor: pointer">
                      </div>
                   </form>
                </div>

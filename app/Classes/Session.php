@@ -7,6 +7,10 @@ class Session {
         return $_SESSION[$name] = $value;
     }
 
+    public static function get(string $name) {
+        return $_SESSION[$name];
+    }
+
     public static function has(string $name) {
         return isset($_SESSION[$name]);
     }

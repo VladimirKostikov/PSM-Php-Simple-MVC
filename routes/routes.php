@@ -11,10 +11,10 @@
 
 return [
     [ 'GET',        '/',               'PageController',       'index',         'welcome'],
-    [ 'GET',        '/product',        'PageController',       'product',       'product'],
-    [ 'GET',        '/profile',        'ProfileController',    'profile',       'profile'],
+    [ 'GET',        '/profile',        'PageController',       'profile',       'profile'],
     [ 'GET',        '/reg',            'AuthController',       'reg',           'reg'],
     [ 'GET',        '/login',          'AuthController',       'login',         'login'],
+    [ 'GET',        '/exit',           'AuthController',       'exit',          'exit'],
 
 
 

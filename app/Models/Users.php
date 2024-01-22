@@ -9,6 +9,6 @@ class Users extends DB {
 
 
     public function __construct() {
-        Parent::__construct(substr(strrchr(__CLASS__, "\\"), 1), $fields);
+        Parent::__construct(substr(strrchr(__CLASS__, "\\"), 1), $this->fields);
     }
 }

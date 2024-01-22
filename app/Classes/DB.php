@@ -19,13 +19,14 @@ class DB {
     private $query = null;
     private $fields = array();
 
-    public function __construct($table = null, $fields = null) {
+    public function __construct($table = null, $fields = array()) {
         $this->hostname = DB_HOST;
         $this->login = DB_USER;
         $this->psw = DB_PASSWORD;
         $this->database = DB_NAME;
 
         $this->table = lcfirst($table);
+        $this->fields = $fields;
 
         $dsn = 'mysql:dbname='.$this->database.';host='.$this->hostname;
         try 
@@ -63,34 +64,35 @@ class DB {
         }
     }
 
-    protected function find(int $id) {
+    public function find(int $id) {
         $this->isModel();
 
         $this->result = $this->db->query("SELECT * FROM {$this->table} WHERE id={$id}")->fetch();
         return $this->result;
     }
 
-    protected function delete(int $id) {
+    public function delete(int $id) {
         $this->isModel();
 
         $this->db->query("DELETE FROM {$this->table} WHERE id={$id}");
         return $this;
     }
 
-    protected function update($fields, $condition = array()) {
+    public function update($fields, $condition = array()) {
         $this->isModel();
 
         if(!empty($fields)) {
-            $sql = "UPDATE {$this->table} SET (";
+            $sql = "UPDATE {$this->table} SET ";
 
             foreach($fields as $field) {
                 if($field != end($fields))
                     $sql .= "{$field},";
                 else
                     $sql .= "{$field}";
+                $sql .= " ";
             }
 
-            $sql .= ")";
+            $sql .= " ";
         }
 
         else {
@@ -101,13 +103,16 @@ class DB {
         if(!empty($condition)) {
             foreach($condition as $con) {
                 $sql .= "$con";
+                $sql .= " ";
             }
         }
+
+        echo $sql;
 
         return $this->query($sql)->fetch();
     }
 
-    protected function select($fields, $condition = array()) {
+    public function select($fields, $condition = array()) {
         $this->isModel();
 
         if(!empty($fields)) {
@@ -118,9 +123,11 @@ class DB {
                     $sql .= "{$field},";
                 else
                     $sql .= "{$field}";
+                $sql .= " ";
             }
 
-            $sql .= ") FROM {$this->table}";
+
+            $sql .= ") FROM {$this->table} ";
         }
 
         else {
@@ -131,6 +138,7 @@ class DB {
         if(!empty($condition)) {
             foreach($condition as $con) {
                 $sql .= "$con";
+                $sql .= " ";
             }
         }
 
@@ -138,7 +146,7 @@ class DB {
         
     }
 
-    protected function create(array $values) {
+    public function create(array $values) {
         $this->isModel();
 
         if(!empty($this->fields)) {
@@ -149,15 +157,17 @@ class DB {
                     $sql .= "{$field},";
                 else
                     $sql .= "{$field}";
+                $sql .= " ";
             }
 
             $sql .= ") VALUES (";
             
             foreach($values as $val) {
-                if($val != end($this->values))
-                    $sql .= "{$val},";
+                if($val != end($values))
+                    $sql .= "'{$val}',";
                 else
-                    $sql .= "{$val}";
+                    $sql .= "'{$val}'";
+                $sql .= " ";
             }
 
             $sql .= ");";
