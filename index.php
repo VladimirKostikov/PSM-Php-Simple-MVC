@@ -6,6 +6,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/config/config.php';
 
 use App\Classes\Route;
 
+
 $route = new Route($_SERVER['REQUEST_URI']);
 
 switch($_SERVER['REQUEST_METHOD']) {
