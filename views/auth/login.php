@@ -12,7 +12,7 @@
                   <p class="text-center">If you don't have an account, <a href="/register" class="text-indigo-400">return to the registration page</a></p>
                </div>
                <div class="mt-1">
-                  <form action="" class="pt-6 pb-3 mb-4">
+                  <form action="/post/login" class="pt-6 pb-3 mb-4" method="POST">
                      <div class="mb-4">
                         <label class="block text-gray-700 text-sm font-bold mb-2" for="login">Your login <b class="text-rose-700">*</b></label>
                         <input type="text" name="login" id="login" placeholder="Enter login" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
@@ -29,6 +29,14 @@
                <div class="mt-1">
                   <a href="/register" class="block w-full p-3 bg-indigo-400 rounded text-white text-center">Return to the registration page</a>
                </div>
+
+               <?php var_dump($data) ?>
+
+               <?php if(!empty($data) && $data['error']) { ?>
+               <div class="p-5 bg-pink-600 text-white mt-5 text-center">
+                  <span>Authorization error: <?php echo $data['error'] ?></span>
+               </div>
+               <?php } ?>
             </div>
         </div>
    </div>

@@ -4,14 +4,9 @@ namespace App\Classes;
 
 class Route {
     private $uri;
-    private $data = array();
 
     public function __construct($uri) {
         $this->uri = $uri;
-        if(isset($_GET)) {
-            $this->uri = strtok($this->uri, '?');
-            $this->data = $_GET;
-        }
     }
 
     public function getUri() {
@@ -39,7 +34,21 @@ class Route {
             $class = "App\Controllers\\".$route[2];
             $controller = new $class();
 
-            return call_user_func(array($controller, $route[3]), $this->data);
+            return call_user_func(array($controller, $route[3]), $_GET);
+        }
+        else {
+            return include(ROOT."/views/errors/404".FILE_TEMPLATE_TYPE);
+        }
+    }
+
+    public function post() {
+        $route = $this->findRoute('POST', $this->uri);
+
+        if($route != NULL) {
+            $class = "App\Controllers\\".$route[2];
+            $controller = new $class();
+
+            return call_user_func(array($controller, $route[3]), $_POST);
         }
         else {
             return include(ROOT."/views/errors/404".FILE_TEMPLATE_TYPE);

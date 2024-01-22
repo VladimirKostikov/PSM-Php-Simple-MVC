@@ -4,6 +4,7 @@ namespace App\Classes;
 
 require_once ROOT.'/config/config.php';
 use App\Classes\View;
+use App\Classes\Session;
 
 
 

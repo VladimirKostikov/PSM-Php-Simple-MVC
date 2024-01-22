@@ -11,6 +11,9 @@ return array(
     'App\\Classes\\Route' => $baseDir . '/app/Classes/Route.php',
     'App\\Classes\\Session' => $baseDir . '/app/Classes/Session.php',
     'App\\Classes\\View' => $baseDir . '/app/Classes/View.php',
+    'App\\Controllers\\AuthController' => $baseDir . '/app/Controllers/AuthController.php',
     'App\\Controllers\\PageController' => $baseDir . '/app/Controllers/PageController.php',
+    'App\\Controllers\\ProfileController' => $baseDir . '/app/Controllers/ProfileController.php',
+    'App\\Models\\Users' => $baseDir . '/app/Models/Users.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
 );
