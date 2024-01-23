@@ -11,10 +11,12 @@
 </head>
 <body class="bg-slate-100">
 
-<header class="bg-white p-5 shadow-lg shadow-sky-50 border-t-4 border-indigo-400">
+<header class="bg-white p-5 shadow-lg shadow-sky-50 border-t-4 border-blue-600">
     <nav class="mx-auto flex max-w-4xl items-center justify-between p-2">
         <div class="flex lg:flex-1">
-            <a href="<?php echo $GLOBALS["route"]->getRoute('welcome'); ?>" class="text-xl font-semibold">Simple MVC Panel</a>
+            <a href="<?php echo $GLOBALS["route"]->getRoute('welcome'); ?>" class="text-xl text-blue-600 font-semibold">
+                PSM
+            </a>
         </div>
         <div class="flex lg:flex-2 gap-10">
             <a href="/docs" class="hover:text-indigo-400 text-sm leading-6 text-gray-900">Docs</a>
