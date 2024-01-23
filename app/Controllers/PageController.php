@@ -1,6 +1,17 @@
 <?php
+/**
+ * PageController
+ * Custom controller. Created for example
+ * This controller is responsible for rendering pages
+ */
 
 namespace App\Controllers;
+
+/**
+ * We connect classes that will be needed to implement authorization
+ * The base Controller class from which the AuthController class inherits
+ * Session will store the ID of the authorized user
+ */
 
 use App\Classes\Controller;
 use App\Classes\Session;
