@@ -8,9 +8,8 @@
 namespace App\Controllers;
 
 /**
- * We connect classes that will be needed to implement authorization
- * The base Controller class from which the AuthController class inherits
- * Session will store the ID of the authorized user
+ * The base Controller class from which the PageController class inherits
+ * Session will check authorization
  */
 
 use App\Classes\Controller;
@@ -19,10 +18,18 @@ use App\Models\Users;
 
 class PageController extends Controller {
 
+    /**
+     * index method
+     * Display welcome page
+     */
     public function index($data = array()) {
         return $this->view('welcome');
     }   
 
+    /**
+     * profile method
+     * Display profile page with user data
+     */
     public function profile($data = array()) {
         if(Session::has('auth')) {
             $users = new Users();

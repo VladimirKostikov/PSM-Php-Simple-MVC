@@ -1,5 +1,10 @@
 <?php
-// site settings
+/**
+ * Main configuration file
+ * Here are the settings of the site, templates, database
+ */
+
+// Site settings
 define('APP_NAME', 'Simple MVC Panel');
 define('ROOT', $_SERVER['DOCUMENT_ROOT']);
 

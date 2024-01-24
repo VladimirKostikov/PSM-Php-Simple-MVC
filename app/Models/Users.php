@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Users model. Created for example
+ * Model accesses the Users table
+ * Using this model you can access the database
+ */
+
 namespace App\Models;
 use App\Classes\DB;
 
