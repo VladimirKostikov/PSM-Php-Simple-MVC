@@ -1,1 +1,1 @@
-<hr>
+<hr style="color: #333">
