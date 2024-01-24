@@ -28,7 +28,6 @@ class ComposerStaticInitf93c3a35b893fa0a889dc78547f82d20
         'App\\Classes\\View' => __DIR__ . '/../..' . '/app/Classes/View.php',
         'App\\Controllers\\AuthController' => __DIR__ . '/../..' . '/app/Controllers/AuthController.php',
         'App\\Controllers\\PageController' => __DIR__ . '/../..' . '/app/Controllers/PageController.php',
-        'App\\Controllers\\ProfileController' => __DIR__ . '/../..' . '/app/Controllers/ProfileController.php',
         'App\\Models\\Users' => __DIR__ . '/../..' . '/app/Models/Users.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
