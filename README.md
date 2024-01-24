@@ -6,4 +6,6 @@
 
 <hr>
 
-<h1> About project </h1>
+<h2> About project </h2>
+
+<p>This project is my first self-written MVC system for the PHP language. I implemented simple routing, controllers, models</p>
