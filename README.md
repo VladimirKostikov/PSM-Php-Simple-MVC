@@ -1,1 +1,3 @@
-<hr style="background-color: #000; height: 1px; border: 2px;">
+<hr>
+
+![alt text](https://github.com/VladimirKostikov/PSM-Php-Simple-MVC/tree/main/public/img/logo.jpg?raw=true
