@@ -15,6 +15,6 @@ define('FILE_TEMPLATE_TYPE', '.php');
 
 // DB Settings
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'MVC');
-define('DB_USER', 'admin');
-define('DB_PASSWORD', 'Bar1234@');
+define('DB_NAME', 'YOUR_VALUE');
+define('DB_USER', 'YOUR_VALUE');
+define('DB_PASSWORD', 'YOUR_VALUE');

@@ -27,7 +27,9 @@
 <p>This project uses autoloading of classes using Composer according to the PSR-4 standard</p>
 <p>After creating new classes, you need to run сlass map generation by this command:</p>
 
-`composer dump-autoload -o`
+```
+composer dump-autoload -o
+```
 
 <hr>
 
@@ -71,18 +73,75 @@ class PageController extends Controller {
 <p>Models allow you to quickly write a database query. Model name - table name. <b>Examples:</b></p>
 
 <p><b>Create an instance of the class</b></p>
-`$users = new Users();`
+
+```
+$users = new Users();
+```
 
 <p><b>Add row to table:</b></p>
 
-`$users->create(array("Vladimir", "email@gmail.com", "password"));`
+```
+$users->create(array("Vladimir", "email@gmail.com", "password"));
+```
 
 <p><b>Get data from table:</b></p>
 
-`$users->select(array('login'));`
+```
+$users->select(array('login'));
+```
 
 <p><b>Update data in table:</b></p>
 
-`$users->update(array('login="Vladimir"'), array('WHERE id=3'));`
+```
+$users->update(array('login="Vladimir"'), array('WHERE id=3'));
+```
+
+<hr>
+
+<h2>Config</h2>
+<p>Configuration file stores general site settings:</p>
+
+```
+// Site settings
+define('APP_NAME', 'Simple MVC Panel');
+define('ROOT', $_SERVER['DOCUMENT_ROOT']);
+
+// Template settings
+define('PATH_HEADER', '/views/layouts/header.php');
+define('PATH_FOOTER', '/views/layouts/footer.php');
+define('FILE_TEMPLATE_TYPE', '.php');
+
+// DB Settings
+define('DB_HOST', 'localhost');
+define('DB_NAME', 'YOUR_VALUE');
+define('DB_USER', 'YOUR_VALUE');
+define('DB_PASSWORD', 'YOUR_VALUE');
+
+```
+
+<hr>
+
+<h2>Public folder</h2>
+<p>.htaccess allows you to send requests to this folder. This folder stores assets, styles, and other scripts</p>
+
+<hr>
+
+<h2>Routes</h2>
+<p>This file stores site routes. <b>Example:</b></p>
+
+```
+// TYPE         URL                 Controller              Method          Name
+[ 'GET',        '/',               'PageController',       'index',         'welcome'],
+```
+
+<hr>
+
+<h2>Views</h2>
+<p>This folder contains all the site templates</p>
+
+<hr>
+
+<h2>index.php</h2>
+<p>.htaccess redirects all requests to this file (except for calls to the public folder)</p>
 
 <hr>
